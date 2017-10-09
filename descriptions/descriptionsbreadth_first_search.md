@@ -1,9 +1,9 @@
 ## ELI5
 A linked list is a data structure made up of a bunch of little boxes that each hold a piece of information and directions to the next box. This makes it easy to make changes, because you don't have to move anything to a different box, you just have to give each box new directions. However, if you want the values in a certain box, you have to ask every box before it for directions to get there.
 ### Pros
-* It's cheap to add and remove elements from a linked list.
+It's cheap to add and remove elements from a linked list. 
 ### Cons
-* It's expensive to get values in a given box.
+It's expensive to maintain new insertion and delection.
 
 ## Technical Explanation
 A linked list is defined recursively as being either empty, or containing a node which stores a value and a pointer to a linked list. A linked list commonly starts with a pointer (often named "start" or "head") to the first node, and each subsequent node contains its value and a pointer to the next node. The pointer of the last node points to null, and therefore there are no more nodes and the list ends.
@@ -13,6 +13,6 @@ Deleting/erasing an item simply requires redirecting the pointer of the previous
 The pointer-based nature of list also makes it easier to make greater changes such as reversing the list, as once again no values must be copied to different spots in memory, instead only pointers are reassigned.
 Accessing the value at a given index in the list is expensive, in O(n) time. One must start at a known pointer and increment through the list one node at a time until the desired location is reached. Because lists are not based on arrays, subscripting in the standard O(1) sense cannot be used to access list values.
 ### Pros
-*Adding and removing nodes from the list is cheap O(1)
+Adding and removing nodes from the list is cheap O(1). We do not have to know the total size needed in advance. 
 ### Cons
- *Accessing values in the list is expensive O(n)
+ *Accessing values in the list is expensive O(n). The element in each node need to access sequentially.
